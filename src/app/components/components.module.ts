@@ -5,11 +5,12 @@ import { CommonModule } from '@angular/common';
 import { AngularMaterialModule } from '../angular-material/angular-material.module';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { FilterComponent } from './filter/filter.component';
+import { UsersListComponent } from './users-list/users-list.component';
 
 @NgModule({
-  declarations: [UserDetailsComponent, FilterComponent],
+  declarations: [UserDetailsComponent, FilterComponent, UsersListComponent],
   imports: [AngularMaterialModule, CommonModule, FormsModule],
-  exports: [UserDetailsComponent, FilterComponent],
+  exports: [UserDetailsComponent, FilterComponent, UsersListComponent],
   providers: [],
 })
 export class ComponentsModule {}
