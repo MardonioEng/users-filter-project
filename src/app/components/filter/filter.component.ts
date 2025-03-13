@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { IFilterOptions } from '../../interfaces/filter-options.interface';
 
 @Component({
@@ -13,14 +13,16 @@ export class FilterComponent {
     startDate: undefined,
     endDate: undefined,
     status: undefined
-  }
+  };
 
   statusList = [
     { description: 'Ativo', value: true},
     { description: 'Inativo', value: false}
-  ]
+  ];
+
+  @Output('onFilter') filterEmitter: EventEmitter<IFilterOptions> = new EventEmitter<IFilterOptions>();
 
   onFilter() {
-    console.log(this.filterOptions);
+    this.filterEmitter.emit(this.filterOptions);
   }
 }
